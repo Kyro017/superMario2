@@ -1,0 +1,83 @@
+$groundTileDim: 128px;
+$cloudDim: 125px;
+
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#1c8dff, #85eaef);
+  font-family: sans-serif;
+
+}
+
+// id
+
+
+
+
+#ground {
+  height: $groundTileDim;
+  width: 100vw;
+  background: url("imgs/groundTile.jpg") repeat-x;
+  background-size: $groundTileDim;
+  position: fixed; //stuck to the --->
+  left: 0;
+  bottom: 0;
+  // display: flex;
+  // justify-content: flex-end;
+  // justify-content:
+
+}
+
+//class
+
+.cloud{
+  height: $cloudDim;
+  width: $cloudDim;
+  position:relative;
+  top: 50px;
+  // transition: .3s;
+  left: $cloudDim;
+  background: url("imgs/cloudTile.png") no-repeat;
+  background-size: $cloudDim;
+
+  animation-name: movingCloud;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+  // animation-fill-mode: forwards;
+
+  //
+  // animation{
+  //   name: movingCloud;
+  //   duration: 2s;
+  //   // iteration-count: 1;
+  // }
+
+
+
+  }
+
+    // &:hover{
+    //
+    //   transform: translateY($cloudDim) scale(2) rotate(180deg);
+    //
+    //   transition: 1s;
+    // }
+
+// ANIMATION HTML5
+
+
+@keyframes movingCloud{
+  0%{
+    transform: translateX(0px);
+
+  }
+  50%{
+    transform: translateX($cloudDim);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
